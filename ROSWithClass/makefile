@@ -2,7 +2,7 @@ PROJECT         := ROSWithClass
 DEVICES         := NUCLEO_F303K8
 GCC4MBED_DIR    := $(GCC4MBED_DIR)
 USER_LIBS       := !$(ROS_LIB_DIR) $(ROS_LIB_DIR)/BufferedSerial\
-				   ROSWithClass
+				   testClass
 NO_FLOAT_SCANF  := 1
 NO_FLOAT_PRINTF := 1
 

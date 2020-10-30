@@ -1,10 +1,11 @@
 /** main.cpp **/
-#include <ROSWithClass.h>
+#include <testClass.h>
 
-ROSWithClass rwc;
+testClass tc;
 
-int main(void){    
+int main(void){
     while(1){
-        rwc.publish_status();
+        tc.publish_status();
+        wait_ms(10);
     }
 }
