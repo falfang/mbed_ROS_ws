@@ -6,13 +6,13 @@ testClass::testClass(ros::NodeHandle* n_)
     value_pub("/status/value", &value),
     led_sub("/cmd/led", &testClass::led_Cb, this),
     value_sub("/cmd/value", &testClass::value_Cb, this),
-    server("srv", &testClass::service_Cb, this)
+    server("/cmd/toggle", &testClass::service_Cb, this)
 {
     nh_priv = n_;
     myled = 0;
     led_status.data = 0;
     value.data = 0;
-    nh_priv->initNode();
+
     nh_priv->advertise(led_pub);
     nh_priv->advertise(value_pub);
     nh_priv->subscribe(led_sub);
@@ -25,7 +25,6 @@ void testClass::publish_status(void){
     __disable_irq();
     led_pub.publish(&led_status);
     value_pub.publish(&value);
-    nh_priv->spinOnce();
     __enable_irq();
 }
 

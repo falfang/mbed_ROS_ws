@@ -3,10 +3,14 @@
 
 int main(void){
     ros::NodeHandle nh;
+    nh.getHardware()->setBaud(115200);
+    nh.initNode();
+
     testClass tc(&nh);
 
     while(1){
         tc.publish_status();
-        wait_ms(10);
+        nh.spinOnce();
+        wait_ms(20);    //  NG @ 10ms
     }
 }
