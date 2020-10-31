@@ -13,7 +13,7 @@ private:
     std_msgs::Bool led_status;
     std_msgs::Int32 value;
 
-    ros::NodeHandle nh;
+    ros::NodeHandle *nh_priv;
     ros::Publisher led_pub, value_pub;
     ros::Subscriber<std_msgs::Bool, testClass> led_sub;
     ros::Subscriber<std_msgs::Int32, testClass> value_sub;
@@ -24,7 +24,7 @@ private:
     void service_Cb(const std_srvs::Empty::Request&, std_srvs::Empty::Response&);
     
 public:
-    testClass(void);
+    testClass(ros::NodeHandle*);
     void publish_status(void);
 };
 #endif
