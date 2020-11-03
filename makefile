@@ -13,7 +13,8 @@
 # limitations under the License.
 #
 # Directories to be built
-DIRS := ROSWithClass
+DIRS := ROSWithClass\
+	JointState_test
 DIRSCLEAN := $(addsuffix .clean,$(DIRS))
 
 
