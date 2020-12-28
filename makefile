@@ -14,7 +14,8 @@
 #
 # Directories to be built
 DIRS := ROSWithClass\
-	JointState_test
+	JointState_test\
+	array_pub_test
 DIRSCLEAN := $(addsuffix .clean,$(DIRS))
 
 
