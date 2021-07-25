@@ -1,2 +1,3 @@
 NUCLEO_*
 /.vscode
+/ros_lib
