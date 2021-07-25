@@ -1,3 +1,4 @@
 NUCLEO_*
 /.vscode
 /ros_lib
+*.code-workspace
